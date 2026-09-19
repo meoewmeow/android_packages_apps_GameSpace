@@ -148,7 +148,7 @@ class TileRepository @Inject constructor(
     fun refreshPlatformStates() {
         if (!::platform.isInitialized) return
         platformTiles.forEach { tile ->
-            val state = platform.getState(tile.id)
+            val state = platform.getStateBundle(tile.id)
             if (!state.isEmpty) tile.updateFromState(state)
         }
     }
